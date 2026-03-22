@@ -60,12 +60,12 @@ export function ImageCard({ entry, getImageData, onRemove, isActive, onClick }: 
         <p className="card-filename">{truncate(primaryLabel, 24)}</p>
         <p className="card-detail">
           {entry.status === "loading" && "Analyzing…"}
-          {entry.status === "done" && model && (
+          {/* {entry.status === "done" && model && (
             <span className="provider-badge" data-provider={model.provider}>
               {model.provider}
               {entry.tokensUsed ? ` · ${entry.tokensUsed}tok` : ""}
             </span>
-          )}
+          )} */}
           {entry.status === "error" && <span className="error-text">Failed</span>}
         </p>
       </div>
