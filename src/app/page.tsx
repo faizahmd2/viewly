@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSession } from "@/hooks/useSession";
 import { UploadZone } from "@/components/UploadZone";
 import { ImageCard } from "@/components/ImageCard";
@@ -29,13 +29,8 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
-  }, []);
-
   return (
     <div className="app">
-      {/* ── Sidebar ── */}
       <aside className="sidebar">
         <div className="sidebar-head">
           <div className="logo">
@@ -89,7 +84,6 @@ export default function Home() {
         </div>
       </aside>
 
-      {/* ── Main Panel ── */}
       <main className="main">
         <AnalysisPanel entry={activeEntry} getImageData={getImageData} />
       </main>
